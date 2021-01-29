@@ -1,0 +1,10 @@
+<template>  
+    <lightning-card title="Order Items">  
+      <lightning-button slot="actions" label="Submit" onclick={submitOrder}></lightning-button>  
+      <div class="slds-box">  
+        <lightning-datatable  
+            data={orderItems} columns={columns} key-field="Id">
+        </lightning-datatable>
+      </div>
+    </lightning-card>  
+  </template>

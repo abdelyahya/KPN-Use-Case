@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="Choose a Product to Add:">
+        <ul>
+            <template if:true ={responseReceived}>
+                <template for:each={products} for:item="product">
+                    <li key={product.Id}>
+                        <div class="slds-p-around_medium lgc-bg">
+                            <lightning-tile label={product.Name}>
+                                <p><lightning-formatted-number value={product.UnitPrice} format-style="currency" currency-code="EUR"></lightning-formatted-number></p>
+                                <lightning-button variant="brand-outline" label="Add to Cart" title="Add to Cart" onclick={handleClick} class="slds-m-left_x-small" data-id={product.Id}></lightning-button>
+                            </lightning-tile>
+                        </div>
+                    </li>
+                </template>
+            </template>
+        </ul>
+    </lightning-card>
+</template>
